@@ -1,0 +1,54 @@
+1. Что такое переменная? И в чем ее разница со значением?
+Переменная - адрес памяти
+Значение - то что лежит в этом адресе
+2. Что такое примитивный тип и неприметивный? В чем разница между ними? Приведите конкретный пример.
+Примитивы могут быть только перезаписаны, а непримитивы могут быть модифицированы и перезаписаны (это тип Object в JS)
+3. Создайте любой объект, добавьте в него новый ключ со значением, потом удалите любой существующий ключ. Потом проитерируйте объект используя Object.entries, Object.values, Object.keys.
+
+
+let temp = {
+    first: 'variable_first',
+    second: 'variable_second'
+}
+
+console.log(temp)
+
+delete temp.second
+
+console.log(temp)
+
+temp.new = 'new_variable'
+
+console.log(temp)
+
+for (const[key, value] of Object.entries(temp)) {
+  console.log(`${key}: ${value}`)
+}
+
+console.log('-------')
+console.log(Object.values(temp))
+
+console.log('-------')
+console.log(Object.keys(temp))
+
+
+4. Создайте любой массив, измените массив используя методы push, unshift, shift, pop. Как можно удалить элемент из массива по значение и по номер элемента в массиве, напишите пример?
+
+let array = ['1', 2, true ]
+console.log(array)
+array.push('12345')
+console.log(array)
+array.shift()
+console.log(array)
+array.unshift('test')
+console.log(array)
+array.pop()
+console.log(array)
+array.splice(1,1)
+console.log(array)
+array.splice(true,1)
+console.log(array)
+
+5. Что такое поверхностное и глубокое копирование? В чем разинца между ними? Приведите примеры
+Поверхностное копирование - когда копируется только необходимая часть, которая нужна для копирование
+Глубокое копирование - копирование полное, когда создаётся полная копия и одна не влияет на другую
